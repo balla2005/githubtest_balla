@@ -1,5 +1,5 @@
 #! /bin/bash
-
+#Author :Sballa
 # Script Name:        batch_end.sh
 # Description:        This script updates the UDAP_BATCH_DATE as ETL_BATCH_DATE after the batch finishes.
 # Usage      :        batch_end.sh
