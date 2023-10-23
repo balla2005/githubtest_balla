@@ -1,0 +1,424 @@
+Date: Sun, 22 Oct 2023 11:47:28 +0000 (UTC)
+Message-ID: <1446246229.401.1697975248320@4f231b6cdc36>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_400_1209537981.1697975248320"
+
+------=_Part_400_1209537981.1697975248320
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>Install Azure CLI and add Azure-Devops extension</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is to=
+o much for printouts */
+    }
+
+    body {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        font-size: 10pt;
+        line-height: 1.2;
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sid=
+ebar #content {
+        background: var(--ds-surface, #fff) !important;
+        color: var(--ds-text, #000) !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: var(--ds-text, #000);
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        page-break-after: avoid;
+    }
+
+    pre {
+        font-family: Monaco, "Courier New", monospace;
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at en=
+d of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>Install Azure CLI and add Azure-Devops extension</h1>
+    <div class=3D"Section1">
+        <p>Azure CLI allows us to install the Azure command line to connect=
+ to Azure and execute administrative commands on Azure resources. By adding=
+ the Azure-Devops extension, we are then able to run administrative command=
+s on our Azure-Devops services. </p>
+<h2 id=3D"InstallAzureCLIandaddAzure-Devopsextension-InstallAzureCLI">Insta=
+ll Azure CLI</h2>
+<p><a href=3D"https://docs.microsoft.com/en-us/cli/azure/install-azure-cli"=
+ data-card-appearance=3D"inline" class=3D"external-link" rel=3D"nofollow">h=
+ttps://docs.microsoft.com/en-us/cli/azure/install-azure-cli</a> </p>
+<ol>
+<li><p>Open the Powershell CLI as Administrator</p></li>
+<li><p>Run the following command to install: <code>Invoke-WebRequest -Uri h=
+ttps://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process=
+ msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'; rm .\AzureCLI.ms=
+i</code></p></li>
+<li><p>Once installed, close Powershell</p></li>
+</ol>
+<h2 id=3D"InstallAzureCLIandaddAzure-Devopsextension-InstallAzure-DevopsExt=
+ension">Install Azure-Devops Extension</h2>
+<p><a href=3D"https://docs.microsoft.com/en-us/azure/devops/cli/?view=3Dazu=
+re-devops" data-card-appearance=3D"inline" class=3D"external-link" rel=3D"n=
+ofollow">https://docs.microsoft.com/en-us/azure/devops/cli/?view=3Dazure-de=
+vops</a> </p>
+<ol>
+<li><p>Open a command line interface as an administrator</p></li>
+<li><p>Run the following command to verify Azure CLI has been installed: <c=
+ode>az --version</code></p></li>
+<li><p>Run the following command to install Azure-Devops extension: <code>a=
+z extension add --name azure-devops</code></p>
+<ol>
+<li><p>If you have the Azure Devops extension already installed then it can=
+ be upgraded with: <code>az extension add --upgrade --name azure-devops</co=
+de></p></li>
+</ol></li>
+</ol>
+<h2 id=3D"InstallAzureCLIandaddAzure-Devopsextension-LoginToAzure-Devops">L=
+ogin To Azure-Devops</h2>
+<p><a href=3D"https://docs.microsoft.com/en-us/azure/devops/cli/log-in-via-=
+pat?view=3Dazure-devops&amp;tabs=3Dwindows" data-card-appearance=3D"inline"=
+ class=3D"external-link" rel=3D"nofollow">https://docs.microsoft.com/en-us/=
+azure/devops/cli/log-in-via-pat?view=3Dazure-devops&amp;tabs=3Dwindows</a> =
+</p>
+<ol>
+<li><p>Open a command line interface as an administrator</p></li>
+<li><p>Run the following command to login to the <strong>CubeServices</stro=
+ng> organisation: <code>az devops login --organization https://dev.azure.co=
+m/CubeServices</code></p></li>
+<li><p>Paste in your PAT (refer to <a href=3D"/wiki/spaces/DEVOPS/pages/252=
+5757457/Adding+an+Build+Agent+to+Azure+DevOps" data-linked-resource-id=3D"2=
+525757457" data-linked-resource-version=3D"7" data-linked-resource-type=3D"=
+page">Adding an Build Agent to Azure DevOps</a> to create a PAT)</p></li>
+<li><p>Press enter to login</p></li>
+<li><p>You are now connected to the CubeServices organisation and can run c=
+ommands via CLI. </p></li>
+<li><p><strong>Note:</strong> Before your PAT expires you can renew it here=
+: <a href=3D"https://dev.azure.com/CubeServices/_usersSettings/tokens" clas=
+s=3D"external-link" rel=3D"nofollow">https://dev.azure.com/CubeServices/_us=
+ersSettings/tokens</a> and should not need to use the instructions above to=
+ re-authenticate. YMMV</p></li>
+</ol>
+<h2 id=3D"InstallAzureCLIandaddAzure-Devopsextension-Setsomedefaultvalues">=
+Set some default values</h2>
+<ol>
+<li><p>Set your default configuration, to speed up tasks later: <code>az de=
+vops configure --defaults organization=3Dhttps://dev.azure.com/CubeServices=
+ project=3DRegPlatform</code></p></li>
+</ol>
+<h2 id=3D"InstallAzureCLIandaddAzure-Devopsextension-Startworking!">Start w=
+orking!</h2>
+<ol>
+<li><p>Execute some commands, such as:</p>
+<ol>
+<li><p>Get a list of pipelines:</p>
+<ol>
+<li><p><code>az pipelines list --output table</code></p></li>
+</ol></li>
+<li><p>Get a list of pipeline releases, showing the most recent 20:</p>
+<ol>
+<li><p><code>az pipelines release list --output table --top 20</code></p></=
+li>
+</ol></li>
+<li><p>Get a list of Build pipeline releases with the =E2=80=9Cmaster=E2=80=
+=9D branch</p>
+<ol>
+<li><p><code>az pipelines release list --source-branch 'refs/heads/master' =
+--output table</code></p></li>
+</ol></li>
+<li><p>Get a list of variable groups:</p>
+<ol>
+<li><p><code>az pipelines variable-group list --output table</code></p></li=
+>
+</ol></li>
+<li><p>Get a list of just Variable groups sorted by name, using a JMESPath =
+Query:</p>
+<ol>
+<li><p><code>az pipelines variable-group list --query "[].name | sort (@)"<=
+/code></p></li>
+</ol></li>
+<li><p>Get a list of variable groups and all the variables within them by s=
+aving the output as JSON to a file instead of displaying the top level as a=
+ table:</p>
+<ol>
+<li><p><code>az pipelines variable-group list --output json&gt;C:\Temp\Azur=
+eDevops_Vars.json # output the list to a JSON file</code></p></li>
+</ol></li>
+<li><p>Get a list of variables from only the =E2=80=9CEmail - DEV2=E2=80=9D=
+ variable group:</p>
+<ol>
+<li><p><code>az pipelines variable-group list --query "[?contains(name, 'Em=
+ail - DEV2')]"</code></p></li>
+</ol></li>
+<li><p>Get a list of ONLY the variables (not the header information) for th=
+e =E2=80=9CEnvironment - PROD=E2=80=9D variable group;</p>
+<ol>
+<li><p><code>az pipelines variable-group list --query "[?contains(name, 'En=
+vironment - PROD2')] | [].variables" --output JSON&gt;C:\Temp\Environment-P=
+ROD2_Vars.json</code></p></li>
+</ol></li>
+<li><p>List all projects in a pending approval state (this script is still =
+in development and testing):</p>
+<ol>
+<li><p></p>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: powershell; gutter: false; theme: Confluence" data-theme=3D"Confluence">$=
+ReleaseDefinitionResult =3D az pipelines release list --project "RegPlatfor=
+m" | ConvertFrom-Json
+Foreach ($releaseDef in $ReleaseDefinitionResult)
+{
+    $releaseDefId =3D az pipelines release show --id $releaseDef.id | Conve=
+rtFrom-Json
+    Foreach ($envRelease in $releaseDefId.environments)
+    {
+        if ($envRelease.preDeployApprovals[0].status -eq "pending")
+        {
+        write-host $envRelease.name " " $releaseDef.id " " $envRelease.rele=
+aseDefinition.name " " $releaseDef.name " Approval Pending!"
+        }
+    }
+}</pre>=20
+</div>
+</div></li>
+</ol></li>
+</ol></li>
+<li><p>More examples and help: </p>
+<ol>
+<li><p><a href=3D"https://devblogs.microsoft.com/devops/using-azure-devops-=
+from-the-command-line/" data-card-appearance=3D"inline" class=3D"external-l=
+ink" rel=3D"nofollow">https://devblogs.microsoft.com/devops/using-azure-dev=
+ops-from-the-command-line/</a> </p></li>
+<li><p><a href=3D"https://github.com/Azure/azure-devops-cli-extension" data=
+-card-appearance=3D"inline" class=3D"external-link" rel=3D"nofollow">https:=
+//github.com/Azure/azure-devops-cli-extension</a> </p></li>
+<li><p><a href=3D"https://docs.microsoft.com/en-us/azure/devops/cli/quick-r=
+eference?view=3Dazure-devops" data-card-appearance=3D"inline" class=3D"exte=
+rnal-link" rel=3D"nofollow">https://docs.microsoft.com/en-us/azure/devops/c=
+li/quick-reference?view=3Dazure-devops</a> </p></li>
+<li><p><a href=3D"https://docs.microsoft.com/en-us/cli/azure/query-azure-cl=
+i" data-card-appearance=3D"inline" class=3D"external-link" rel=3D"nofollow"=
+>https://docs.microsoft.com/en-us/cli/azure/query-azure-cli</a> </p></li>
+<li><p><a href=3D"https://techcommunity.microsoft.com/t5/itops-talk-blog/ho=
+w-to-query-azure-resources-using-the-azure-cli/ba-p/360147" data-card-appea=
+rance=3D"inline" class=3D"external-link" rel=3D"nofollow">https://techcommu=
+nity.microsoft.com/t5/itops-talk-blog/how-to-query-azure-resources-using-th=
+e-azure-cli/ba-p/360147</a> </p></li>
+<li><p><a href=3D"https://jmespath.org/" data-card-appearance=3D"inline" cl=
+ass=3D"external-link" rel=3D"nofollow">https://jmespath.org/</a> </p></li>
+<li><p><a href=3D"https://colinsalmcorner.com/az-devops-like-a-boss/" data-=
+card-appearance=3D"inline" class=3D"external-link" rel=3D"nofollow">https:/=
+/colinsalmcorner.com/az-devops-like-a-boss/</a> </p></li>
+<li><p><a href=3D"https://vinijmoura.medium.com/" data-card-appearance=3D"i=
+nline" class=3D"external-link" rel=3D"nofollow">https://vinijmoura.medium.c=
+om/</a> </p>
+<ol>
+<li><p><a href=3D"https://vinijmoura.medium.com/how-to-list-all-release-def=
+initions-stages-and-approvers-on-classic-releases-in-azure-devops-733bdabb7=
+a5f" data-card-appearance=3D"inline" class=3D"external-link" rel=3D"nofollo=
+w">https://vinijmoura.medium.com/how-to-list-all-release-definitions-stages=
+-and-approvers-on-classic-releases-in-azure-devops-733bdabb7a5f</a> </p></l=
+i>
+</ol></li>
+</ol></li>
+</ol>
+<p></p>
+<p></p>
+    </div>
+</body>
+</html>
+------=_Part_400_1209537981.1697975248320--
